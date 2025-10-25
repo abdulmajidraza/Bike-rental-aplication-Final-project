@@ -1,0 +1,243 @@
+================================================================================
+BIKE RENTAL APPLICATION - FRONTEND CODE SUMMARY
+================================================================================
+
+LOCATION: c:\Users\VAMSINADH\bike rental full stack\client\
+
+================================================================================
+TECHNOLOGY STACK
+================================================================================
+- React 18.2.0 with Vite
+- TailwindCSS 3.4.1 for styling
+- React Router DOM 6.21.1 for routing
+- Zustand 4.4.7 for state management
+- Axios 1.6.5 for HTTP requests
+- Socket.IO Client 4.6.0 for real-time features
+- Leaflet 1.9.4 for maps
+- Recharts 2.10.3 for charts
+- Stripe for payments
+- Lucide React for icons
+- date-fns for date handling
+- React Hot Toast for notifications
+
+================================================================================
+PROJECT STRUCTURE
+================================================================================
+
+client/
+├── index.html
+├── package.json
+├── vite.config.js
+├── tailwind.config.js
+├── postcss.config.js
+├── .env.example
+└── src/
+    ├── main.jsx
+    ├── App.jsx
+    ├── index.css
+    ├── pages/
+    │   ├── Home.jsx
+    │   ├── Login.jsx
+    │   ├── Signup.jsx
+    │   ├── Bikes.jsx
+    │   ├── BikeDetails.jsx
+    │   ├── Bookings.jsx
+    │   ├── BookingDetails.jsx
+    │   ├── Profile.jsx
+    │   └── AdminDashboard.jsx
+    ├── components/
+    │   ├── Navbar.jsx
+    │   ├── PrivateRoute.jsx
+    │   ├── AdminRoute.jsx
+    │   ├── BikeCard.jsx
+    │   ├── BookingCard.jsx
+    │   ├── MapView.jsx
+    │   ├── PaymentModal.jsx
+    │   └── admin/
+    │       ├── AdminOverview.jsx
+    │       ├── AdminBikes.jsx
+    │       ├── AdminBookings.jsx
+    │       └── AdminReports.jsx
+    ├── utils/
+    │   ├── api.js
+    │   └── socket.js
+    └── store/
+        └── authStore.js
+
+================================================================================
+KEY FEATURES IMPLEMENTED
+================================================================================
+
+USER FEATURES:
+✓ User authentication (login/signup)
+✓ Browse bikes with search & filters (brand, availability)
+✓ View detailed bike information with specifications
+✓ Book bikes (hourly or daily rental)
+✓ Payment processing (Card/UPI simulation)
+✓ View booking history with filters
+✓ Live bike tracking with interactive maps
+✓ Cancel bookings with automatic refunds
+✓ Profile management
+
+ADMIN FEATURES:
+✓ Dashboard with statistics and charts
+✓ Bike management (Add/Edit/Delete)
+✓ Booking management with status updates
+✓ Revenue reports and analytics
+✓ Daily reports with downloadable data
+✓ Popular bikes tracking
+✓ Real-time overview metrics
+
+DESIGN FEATURES:
+✓ Fully responsive (mobile, tablet, desktop)
+✓ Modern UI with TailwindCSS
+✓ Red color theme (primary: #dc2626)
+✓ Loading states and animations
+✓ Toast notifications for user feedback
+✓ Modal dialogs for forms
+✓ Custom scrollbar styling
+✓ Hover effects and transitions
+
+================================================================================
+ROUTING STRUCTURE
+================================================================================
+
+PUBLIC ROUTES:
+/ - Home page
+/login - Login page
+/signup - Signup page
+/bikes - Browse bikes
+/bikes/:id - Bike details
+
+PROTECTED ROUTES (Require Login):
+/bookings - User's bookings
+/bookings/:id - Booking details with live tracking
+/profile - User profile
+
+ADMIN ROUTES (Require Admin Role):
+/admin - Admin overview
+/admin/bikes - Manage bikes
+/admin/bookings - Manage bookings
+/admin/reports - View reports
+
+================================================================================
+API ENDPOINTS USED
+================================================================================
+
+AUTH:
+POST /api/auth/login - User login
+POST /api/auth/register - User registration
+GET /api/auth/me - Get current user
+
+BIKES:
+GET /api/bikes - Get all bikes (with filters)
+GET /api/bikes/:id - Get bike by ID
+POST /api/bikes - Create bike (admin)
+PUT /api/bikes/:id - Update bike (admin)
+DELETE /api/bikes/:id - Delete bike (admin)
+
+BOOKINGS:
+GET /api/bookings - Get user bookings
+GET /api/bookings/:id - Get booking details
+POST /api/bookings - Create booking
+PUT /api/bookings/:id/cancel - Cancel booking
+PUT /api/bookings/:id/location - Update location
+PUT /api/bookings/:id/status - Update status (admin)
+
+PAYMENTS:
+POST /api/payments/create-payment-intent - Create payment
+POST /api/payments/confirm - Confirm payment
+POST /api/payments/refund - Process refund
+GET /api/payments - Get all payments (admin)
+
+REPORTS:
+GET /api/reports/daily - Get daily report
+GET /api/reports/overview - Get overview stats
+GET /api/reports/revenue - Get revenue data
+
+================================================================================
+REAL-TIME FEATURES (Socket.IO)
+================================================================================
+
+Events:
+- connect - Socket connection established
+- disconnect - Socket disconnected
+- joinTracking - Join booking tracking room
+- updateLocation - Send location update
+- locationUpdate - Receive location update
+
+Used for:
+- Live bike location tracking during active rentals
+- Real-time booking status updates
+
+================================================================================
+STATE MANAGEMENT (Zustand)
+================================================================================
+
+Auth Store (authStore.js):
+- user: Current user object
+- token: JWT authentication token
+- isAuthenticated: Boolean flag
+- setAuth(user, token): Set authentication
+- logout(): Clear authentication
+- updateUser(userData): Update user info
+
+Persisted to localStorage as 'auth-storage'
+
+================================================================================
+CUSTOM STYLES (Tailwind Classes)
+================================================================================
+
+.btn-primary - Red primary button
+.btn-secondary - Gray secondary button
+.btn-outline - Outlined red button
+.input-field - Styled input field
+.card - White card with shadow
+
+================================================================================
+ENVIRONMENT VARIABLES
+================================================================================
+
+VITE_API_URL - Backend API URL (default: http://localhost:5000/api)
+VITE_SOCKET_URL - Socket.IO URL (default: http://localhost:5000)
+VITE_STRIPE_PUBLIC_KEY - Stripe public key
+
+================================================================================
+INSTALLATION & SETUP
+================================================================================
+
+1. Navigate to client folder:
+   cd client
+
+2. Install dependencies:
+   npm install
+
+3. Create .env file from .env.example:
+   cp .env.example .env
+
+4. Update environment variables in .env
+
+5. Start development server:
+   npm run dev
+
+6. Build for production:
+   npm run build
+
+7. Preview production build:
+   npm run preview
+
+================================================================================
+NOTES
+================================================================================
+
+- All code files are located in: c:\Users\VAMSINADH\bike rental full stack\client\
+- The application uses Vite as the build tool
+- Proxy configured in vite.config.js for API calls
+- TailwindCSS configured with custom red theme
+- Responsive design with mobile-first approach
+- All components are functional components using React Hooks
+- Error handling with try-catch and toast notifications
+- Loading states for better UX
+- Form validation on client side
+
+================================================================================
