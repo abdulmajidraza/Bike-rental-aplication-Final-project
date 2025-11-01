@@ -1,0 +1,17 @@
+[
+  {
+    "_id": "mgi7k70eymvrxjkkwu8",
+    "booking": "mgi7jz8bzcszy8wi0ag",
+    "user": "mgi7jj58olhpjh9b79",
+    "amount": 360,
+    "currency": "INR",
+    "paymentMethod": "upi",
+    "paymentGateway": "stripe",
+    "transactionId": "pi_1759941218164",
+    "status": "refunded",
+    "createdAt": "2025-10-08T16:33:38.174Z",
+    "refundAmount": 360,
+    "refundReason": "hello",
+    "updatedAt": "2025-10-08T16:33:54.548Z"
+  }
+]

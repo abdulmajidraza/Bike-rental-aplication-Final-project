@@ -1,0 +1,32 @@
+[
+  {
+    "_id": "user1",
+    "name": "Admin User",
+    "email": "admin@bikerental.com",
+    "password": "$2a$10$4iHtmJvOgYbAdNMxHSz6duEY4tUVwLkQXXkdcZUl1YlgabICbcpDS",
+    "phone": "+91 9876543210",
+    "role": "admin",
+    "licenseNumber": "DL-ADMIN-001",
+    "createdAt": "2025-10-08T16:27:52.662Z"
+  },
+  {
+    "_id": "user2",
+    "name": "John Doe",
+    "email": "john@example.com",
+    "password": "$2a$10$ybFkCakCyYvBNGmz0cb6Feba.rClu5koFZPOerxeeH0QUaKTF7S7.",
+    "phone": "+91 9876543211",
+    "role": "user",
+    "licenseNumber": "DL-USER-001",
+    "createdAt": "2025-10-08T16:27:52.752Z"
+  },
+  {
+    "_id": "mgi7jj58olhpjh9b79",
+    "name": "Akash",
+    "email": "123@gmail.com",
+    "password": "$2a$10$1H3yr2LOmO5w7U2WHLP7k.aU4xhwk.SuM8B4j2Z/shqU2o0zlJXYa",
+    "phone": "9866628533",
+    "licenseNumber": "DL-9865542",
+    "role": "user",
+    "createdAt": "2025-10-08T16:33:07.244Z"
+  }
+]
